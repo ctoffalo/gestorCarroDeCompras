@@ -1,1 +1,10 @@
-<% console.log(hshFormasDePago) %>
+<select name="formasDePago" id="formasDePago">
+    <option value="">Seleccione una Forma de Pago</option>
+    <% 
+        for(fp in hshFormasDePago){
+    %>
+        <option value="<%= hshFormasDePago[fp].idFormaDePago %>"><%= hshFormasDePago[fp].nombreFormaDePago %></option>
+    <%
+        }
+    %>
+</select>
