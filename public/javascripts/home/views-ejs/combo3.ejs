@@ -1,0 +1,8 @@
+<select name="cantidadCuotasSeleccionadas" id="combo3">
+    <option value="">Seleccione la cantidad de cuotas</option>
+  <% for (var cuota in coleccionCuotas){ %>
+    <option value="<%= coleccionCuotas[cuota].cantidadCuotas %>"> <%= coleccionCuotas[cuota].cantidadCuotas %></option>
+  <%
+    }
+  %>
+</select>

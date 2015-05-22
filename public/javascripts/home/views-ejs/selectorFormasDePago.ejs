@@ -1,10 +1,19 @@
-<select name="formasDePago" id="formasDePago">
-    <option value="">Seleccione una Forma de Pago</option>
-    <% 
-        for(fp in hshFormasDePago){
-    %>
-        <option value="<%= hshFormasDePago[fp].idFormaDePago %>"><%= hshFormasDePago[fp].nombreFormaDePago %></option>
-    <%
-        }
-    %>
-</select>
+<div id="container-combo1">
+    <select name="formasDePago" id="combo1">
+        <option value="">Seleccione una Forma de Pago</option>
+        <% 
+            for(fp in hshFormasDePago){
+        %>
+            <option value="<%= hshFormasDePago[fp].idFormaDePago %>" <%if(hshFormasDePago[fp].coleccionDeTarjetas != null){%> data-tipo="collection" <%}else{%> data-tipo="no-collection" <%}%>><%= hshFormasDePago[fp].nombreFormaDePago %></option>
+        <%
+            }
+        %>
+    </select>
+</div>
+<div id="container-combo2">
+    <!--Tarjetas-->
+</div>
+
+<div id="container-combo3">
+    <!--cuotas-->
+</div>

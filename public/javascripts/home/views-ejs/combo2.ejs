@@ -1,0 +1,8 @@
+<select name="tarjetaSeleccionada" id="combo2">
+    <option value="">Seleccione una tarjeta</option>
+  <% for (var tarjeta in coleccionDeTarjetas){ %>
+    <option value="<%= coleccionDeTarjetas[tarjeta].idTarjeta %>"> <%= coleccionDeTarjetas[tarjeta].nombreTarjeta %></option>
+  <%
+    }
+  %>
+</select>
