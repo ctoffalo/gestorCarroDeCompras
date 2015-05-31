@@ -17,7 +17,7 @@ $(document).ready(function(){
     }else if($("#" + $(this).attr("id") + " option:selected").data("tipo") == 'no-collection'){
       $('#container-combo2').html('');
       $('#container-combo3').html('');
-      gestorFormasDePago.setFormaDePagoSeleccionada($(this).val());
+      gestorFormasDePago.setFormaDePagoSeleccionada('combo1',$(this).val());
     }else if($(this).val() == ''){
       $('#container-combo2').html('');
       $('#container-combo3').html('');

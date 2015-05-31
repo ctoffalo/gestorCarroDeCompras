@@ -4,7 +4,8 @@ hshFormasDePago = [{
     tipoFormaDePago: 'cash',
     nombreFormaDePago: 'Efectivo en sucursal',
     descuentoFormaDePago: 40,
-    coleccionDeTarjetas: null
+    coleccionDeTarjetas: null,
+    
 },{
     idFormaDePago : 11,
     tipoFormaDePago: 'collection',
@@ -29,7 +30,8 @@ hshFormasDePago = [{
         },{
             cantidadCuotas: 24,
             ratio: 1,
-            idListaPrecio: 1
+            idListaPrecio: 1,
+            formaDePagoDefault: true
         }]
     },{
         idTarjeta: 267,
@@ -42,18 +44,6 @@ hshFormasDePago = [{
         },{
             cantidadCuotas: 6,
             ratio: 0.75,
-            idListaPrecio: 1
-        },{
-            cantidadCuotas: 12,
-            ratio: 0.7,
-            idListaPrecio: 1
-        },{
-            cantidadCuotas: 18,
-            ratio: 0.9,
-            idListaPrecio: 1
-        },{
-            cantidadCuotas: 24,
-            ratio: 1,
             idListaPrecio: 1
         },{
             cantidadCuotas: 12,
