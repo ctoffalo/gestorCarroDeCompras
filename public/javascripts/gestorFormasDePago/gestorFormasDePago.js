@@ -75,7 +75,7 @@ var GestorFormasDePago = (function(){
          $('#combo3').on('change',function(){
            /*gestorFormasDePago.renderBox('combo3');*/
            if($(this).val() != ''){
-            gestorFormasDePago.setFormaDePagoSeleccionada('combo3',$('combo2').val());
+            gestorFormasDePago.setFormaDePagoSeleccionada('combo3',$('#combo1').val());
            }
          })
         
@@ -91,7 +91,7 @@ var GestorFormasDePago = (function(){
           for (fp in this.coleccionFormasDePago) {
             if(this.coleccionFormasDePago[fp].idFormaDePago == idFormaDePagoSelecionada){
               localStorage.clear(); //=> limpio el localStorage
-              localStorage.setItem('fpSelec', JSON.stringify(this.coleccionFormasDePago[fp]));
+              localStorage.setItem('formaDePagoSeleccionada', JSON.stringify(this.coleccionFormasDePago[fp]));
             }
           }
         break;
@@ -136,6 +136,35 @@ var GestorFormasDePago = (function(){
       }
     return coleccionDeTarjetas;
   }
+  
+  var public_set_valores_selector = function(){
+    var formaDePagoSeleccionada = JSON.parse(localStorage.formaDePagoSeleccionada);
+    console.log(formaDePagoSeleccionada)
+    
+       $("#combo1 option").each(function(){
+         if($(this).val() != "" && $(this).val() == formaDePagoSeleccionada.idFormaDePago){
+           $(this).attr("selected","selected");
+           $('#combo1').trigger('change');
+           if(formaDePagoSeleccionada.tarjeta != null){
+             $("#combo2 option").each(function(){
+               if($(this).val() != "" && $(this).val() == formaDePagoSeleccionada.tarjeta.idTarjeta){
+                $(this).attr("selected","selected");
+                $('#combo2').trigger('change');
+                 $('#combo3 option').each(function(){
+                    if($(this).val() != "" && $(this).val() == formaDePagoSeleccionada.tarjeta.cuotas.cantidadCuotas){
+                      $(this).attr("selected","selected");
+                      $('#combo3').trigger('change');
+                    }
+                 })
+               }
+             });
+           }
+         }
+       });
+    
+    
+  }
+  
   /******************/
 
   return{
@@ -143,6 +172,7 @@ var GestorFormasDePago = (function(){
     renderBox: public_render_box,
     setFormaDePagoSeleccionada: public_set_forma_de_pago_seleccionada,
     searchFormaDePago: public_search_forma_de_pago_seleccionada,
-    setFormaDePagoInicial: public_set_forma_de_pago_inicial
+    setFormaDePagoInicial: public_set_forma_de_pago_inicial,
+    setValoresSelector: public_set_valores_selector
   }
 })

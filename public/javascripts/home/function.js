@@ -23,4 +23,8 @@ $(document).ready(function(){
       $('#container-combo3').html('');
     }
   })
+  
+  if(localStorage.formaDePagoSeleccionada != undefined){
+      gestorFormasDePago.setValoresSelector();
+    }
 })
