@@ -2,6 +2,7 @@
 var GestorFormasDePago = (function(){
   /*variables y colecciones*/
   var coleccionFormasDePago;
+  var gestorDePrecios;
   /*************************/
 
   /*Metodos publicos*/
@@ -11,6 +12,7 @@ var GestorFormasDePago = (function(){
       this.setFormaDePagoInicial();
     }
     
+    gestorFormasDePago.gestorDePrecios.init();
   };
   var public_set_forma_de_pago_inicial = function(){
     for(var fp in this.coleccionFormasDePago){
@@ -173,6 +175,20 @@ var GestorFormasDePago = (function(){
     setFormaDePagoSeleccionada: public_set_forma_de_pago_seleccionada,
     searchFormaDePago: public_search_forma_de_pago_seleccionada,
     setFormaDePagoInicial: public_set_forma_de_pago_inicial,
-    setValoresSelector: public_set_valores_selector
+    setValoresSelector: public_set_valores_selector,
+    
+    /**************Atributos publicos****************/
+    gestorDePrecios: gestorDePrecios
   }
 })
+
+
+var GestorDePrecios = function(){
+  var public_init = function(){
+    console.log('gesor de precios iniciado');
+  }
+  
+  return {
+    init: public_init
+  }
+}

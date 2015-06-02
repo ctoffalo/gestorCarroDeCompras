@@ -1,6 +1,9 @@
 'use strict';
 var gestorFormasDePago = new GestorFormasDePago();
+var gestorDePrecios = new GestorDePrecios();
+    gestorFormasDePago.gestorDePrecios = gestorDePrecios;
     gestorFormasDePago.init(hshFormasDePago);
+
 $(document).ready(function(){
     var data = {
         hshFormasDePago: hshFormasDePago
