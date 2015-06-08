@@ -12,7 +12,9 @@ var GestorFormasDePago = (function(){
       this.setFormaDePagoInicial();
     }
     
-    gestorFormasDePago.gestorDePrecios.init();
+    if($('#combo1').length != 1){
+      gestorFormasDePago.gestorDePrecios.init();
+    }
   };
   var public_set_forma_de_pago_inicial = function(){
     for(var fp in this.coleccionFormasDePago){
@@ -78,6 +80,7 @@ var GestorFormasDePago = (function(){
            /*gestorFormasDePago.renderBox('combo3');*/
            if($(this).val() != ''){
             gestorFormasDePago.setFormaDePagoSeleccionada('combo3',$('#combo1').val());
+            gestorFormasDePago.gestorDePrecios.init();
            }
          })
         
@@ -140,9 +143,7 @@ var GestorFormasDePago = (function(){
   }
   
   var public_set_valores_selector = function(){
-    var formaDePagoSeleccionada = JSON.parse(localStorage.formaDePagoSeleccionada);
-    console.log(formaDePagoSeleccionada)
-    
+    var formaDePagoSeleccionada = JSON.parse(localStorage.formaDePagoSeleccionada);    
        $("#combo1 option").each(function(){
          if($(this).val() != "" && $(this).val() == formaDePagoSeleccionada.idFormaDePago){
            $(this).attr("selected","selected");
@@ -181,14 +182,3 @@ var GestorFormasDePago = (function(){
     gestorDePrecios: gestorDePrecios
   }
 })
-
-
-var GestorDePrecios = function(){
-  var public_init = function(){
-    console.log('gesor de precios iniciado');
-  }
-  
-  return {
-    init: public_init
-  }
-}

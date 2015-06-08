@@ -1,15 +1,15 @@
 'use strict';
+
 var gestorFormasDePago = new GestorFormasDePago();
+$(document).ready(function(){
 var gestorDePrecios = new GestorDePrecios();
     gestorFormasDePago.gestorDePrecios = gestorDePrecios;
-    gestorFormasDePago.init(hshFormasDePago);
-
-$(document).ready(function(){
     var data = {
         hshFormasDePago: hshFormasDePago
     };
     var html = new EJS({url: '/javascripts/home/views-ejs/selectorFormasDePago.ejs'}).render(data);
     $('#contenedorFormasDePago').html(html);
+    gestorFormasDePago.init(hshFormasDePago);
   
   
   
@@ -21,13 +21,14 @@ $(document).ready(function(){
       $('#container-combo2').html('');
       $('#container-combo3').html('');
       gestorFormasDePago.setFormaDePagoSeleccionada('combo1',$(this).val());
+      gestorFormasDePago.gestorDePrecios.init();
     }else if($(this).val() == ''){
       $('#container-combo2').html('');
       $('#container-combo3').html('');
     }
   })
   
-  if(localStorage.formaDePagoSeleccionada != undefined){
+  if(localStorage.formaDePagoSeleccionada != undefined && $("#combo1").length == 1){
       gestorFormasDePago.setValoresSelector();
     }
 })

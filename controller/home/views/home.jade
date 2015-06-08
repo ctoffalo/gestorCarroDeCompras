@@ -1,6 +1,7 @@
 extends ../../../views/layout
 block content
   script(type='text/javascript', src='/javascripts/gestorFormasDePago/gestorFormasDePago.js')
+  script(type='text/javascript', src='/javascripts/gestorFormasDePago/gestorDePrecios.js')
   script(type='text/javascript', src='/javascripts/home/function.js')
   div.container-fluid
     div.row
@@ -14,7 +15,7 @@ block content
           div.precios.col-lg-12.formaDePago Mastercard 12 cuotas
           div.precios.col-lg-12.row
             div.col-lg-6.precio-lista $ 1500,00
-            div.col-lg-6.precio-gestor(data-listas='l:1_v:1200,00#l:2_v:1400#l:3_v:1500') $1200,00
+            div.col-lg-6.precio-gestor(data-l='l:1_v:1200,00#l:2_v:1400#l:3_v:1500') $1200,00
         div.producto.row 
           div.titulo.col-lg-12 Remera 2
           div.imagen.col-lg-6 
@@ -23,7 +24,7 @@ block content
           div.precios.col-lg-12.formaDePago Mastercard 12 cuotas
           div.precios.col-lg-12.row
             div.col-lg-6.precio-lista $ 1600,00
-            div.col-lg-6.precio-gestor(data-listas='l:1_v:1400,00#l:2_v:1500#l:3_v:1600') $1400,00
+            div.col-lg-6.precio-gestor(data-l='l:1_v:1400,00#l:2_v:1500#l:3_v:1600') $1400,00
         div.producto.row 
           div.titulo.col-lg-12 Remera 3
           div.imagen.col-lg-6 
@@ -32,7 +33,7 @@ block content
           div.precios.col-lg-12.formaDePago Mastercard 12 cuotas
           div.precios.col-lg-12.row
             div.col-lg-6.precio-lista $ 1700,00
-            div.col-lg-6.precio-gestor(data-listas='l:1_v:1500,00#l:2_v:1600#l:3_v:1700') $1500,00
+            div.col-lg-6.precio-gestor(data-l='l:1_v:1500,00#l:2_v:1600#l:3_v:1700') $1500,00
         div.producto.row 
           div.titulo.col-lg-12 Remera 4
           div.imagen.col-lg-6 
@@ -41,7 +42,7 @@ block content
           div.precios.col-lg-12.formaDePago Mastercard 12 cuotas
           div.precios.col-lg-12.row
             div.col-lg-6.precio-lista $ 1800,00
-            div.col-lg-6.precio-gestor(data-listas='l:1_v:1600,00#l:2_v:1700#l:3_v:1800') $1600,00
+            div.col-lg-6.precio-gestor(data-l='l:1_v:1600,00#l:2_v:1700#l:3_v:1800') $1600,00
         div.producto.row 
           div.titulo.col-lg-12 Remera 5
           div.imagen.col-lg-6 
@@ -50,6 +51,6 @@ block content
           div.precios.col-lg-12.formaDePago Mastercard 12 cuotas
           div.precios.col-lg-12.row
             div.col-lg-6.precio-lista $ 1900,00
-            div.col-lg-6.precio-gestor(data-listas='l:1_v:1700,00#l:2_v:1800#l:3_v:1900') $1700,00
+            div.col-lg-6.precio-gestor(data-l='l:1_v:1700,00#l:2_v:1800#l:3_v:1900') $1700,00
             
             
